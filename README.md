@@ -258,9 +258,9 @@ see use_session file:<br>
 
     ************* Query ****************************
 
-    Queries are performed with query objects that
- are created from the session.
-The simplest way to create and use a query object is like this:
+    Queries are performed with query objects that<br>
+    are created from the session.<br>
+    The simplest way to create and use a query object is like this:<br>
 
     >>> project_q = session.query(model.Project)
     >>> for project in project_q:
