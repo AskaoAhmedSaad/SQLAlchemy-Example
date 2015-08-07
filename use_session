@@ -1,0 +1,63 @@
+    - open the console on the same path of all files and wite this commands
+
+    ********** Insert **********
+
+    >>> from test_session import session
+
+
+    >>> import model
+
+    >>> project = model.Project()
+    >>> project.title = u'project 3'
+    >>> project.description = u'project 3 description'
+
+    >>> session.add(project)
+    >>> print project.id
+
+    >>> session.flush()
+    >>> print project.id
+
+    >>> session.commit()
+
+    *************** delete ************************
+    >>> session.delete(project)
+    >>> session.flush()
+
+    you can rollback this:
+
+    >>> session.rollback()
+
+    ************* Query ****************************
+
+    Queries are performed with query objects that are created from the session. The simplest way to create and use a query object is like this:
+
+    >>> project_q = session.query(model.Project)
+    >>> for project in project_q:
+    ...     print project.title
+
+
+    >>> project_q.all()
+
+    >>> project = project_q.first()
+    >>> project.title
+
+    >>> project_q[0:2]
+
+    >>> project_q.get(1)
+
+    *********** Working with relationships *****************
+
+    >>> task = model.Task()
+    >>> task.title= u'task 1'
+    >>> task.description = u'task 1 description'
+    >>> project.tasks.append(task)
+    >>> session.commit()
+
+
+    >>> employee = model.Employee()
+    >>> employee.name= u'samir'
+    >>> employee.job_title= u'developer'
+    >>> task.employees.append(employee)
+    >>> session.commit()
+
+
