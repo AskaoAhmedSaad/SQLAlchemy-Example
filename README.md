@@ -239,9 +239,8 @@ see use_session file:<br>
     >>> project = model.Project()
     >>> project.title = u'project 3'
     >>> project.description = u'project 3 description'
-    >>> see
-
-    >>> session.add(test_page)
+    
+    >>> session.add(project)
     >>> print project.id
 
     >>> session.flush()
