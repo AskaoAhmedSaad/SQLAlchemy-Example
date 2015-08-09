@@ -1,4 +1,4 @@
-from test_metadata_and_types import engine, project_table
+from test_metadata import engine, project_table
 from sqlalchemy.sql import select
 from sqlalchemy.sql import and_, or_, not_
 

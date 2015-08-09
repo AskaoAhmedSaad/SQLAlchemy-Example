@@ -1,4 +1,4 @@
-from test_metadata_and_types import engine, project_table
+from test_metadata import engine, project_table
 from sqlalchemy import update
 
 # get connection pool of connections

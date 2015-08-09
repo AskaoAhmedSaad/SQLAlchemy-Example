@@ -20,7 +20,7 @@ project_table = schema.Table('project', metadata,
 task_table = schema.Table('task', metadata,
     schema.Column('id', types.Integer,
         schema.Sequence('task_seq_id', optional=True), primary_key=True),
-    # one to one relationship
+    # one to many relationship
     schema.Column('projectid', types.Integer,
         schema.ForeignKey('project.id'), nullable=False),
     schema.Column('title', types.Unicode(255), default=u''),
