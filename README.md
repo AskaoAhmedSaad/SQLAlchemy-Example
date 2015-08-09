@@ -79,7 +79,7 @@ The SQL Expression API allows you to build SQL queries using Python objects and 
 **Selecting**<br>
 see sqlexpression_selecting.py:<br>
     
-    from test_metadata_and_types import engine, project_table
+    from test_metadata import engine, project_table
     from sqlalchemy.sql import select
     from sqlalchemy.sql import and_, or_, not_
 
@@ -103,7 +103,7 @@ see sqlexpression_selecting.py:<br>
 **Updating**<br>
 see sqlexpression_updating.py:<br>
 
-    from test_metadata_and_types import engine, project_table
+    from test_metadata import engine, project_table
     from sqlalchemy import update
 
     # get connection pool of connections
@@ -117,7 +117,7 @@ see sqlexpression_updating.py:<br>
 **Deleting**<br>
 see sqlexpression_deleting.py:<br>
 
-    from test_metadata_and_types import engine, project_table
+    from test_metadata import engine, project_table
     from sqlalchemy import delete
 
     # get connection pool of connections
@@ -154,7 +154,7 @@ see model.py :<br>
     task_table = schema.Table('task', metadata,
         schema.Column('id', types.Integer,
             schema.Sequence('task_seq_id', optional=True), primary_key=True),
-        # one to one relationship
+        # one to many relationship
         schema.Column('projectid', types.Integer,
             schema.ForeignKey('project.id'), nullable=False),
         schema.Column('title', types.Unicode(255), default=u''),
